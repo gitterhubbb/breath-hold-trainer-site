@@ -91,6 +91,49 @@
   }
   .store-badge__text strong { font-size: 1.18rem; font-weight: 600; letter-spacing: -0.01em; }
 
+  /* Phone frame */
+  .phone {
+    border-radius: 30px;
+    background: #0c0c12;
+    padding: 7px;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.09);
+  }
+  .phone img { display: block; width: 100%; border-radius: 24px; }
+
+  /* Hero device trio */
+  .hero-shots {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 56px;
+  }
+  .hero-shots .phone { margin: 0 -20px; }
+  .hero-shots .phone.center { width: 210px; z-index: 3; }
+  .hero-shots .phone.side { width: 176px; z-index: 2; }
+  .hero-shots .phone.left { transform: rotate(-7deg) translateY(20px); }
+  .hero-shots .phone.right { transform: rotate(7deg) translateY(20px); }
+
+  /* Screenshot gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 30px 22px;
+    align-items: start;
+  }
+  .gallery figure { margin: 0; text-align: center; }
+  .gallery .phone { max-width: 232px; margin: 0 auto; }
+  .gallery figcaption {
+    margin-top: 14px;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 560px) {
+    .hero-shots .phone.side { display: none; }
+    .hero-shots .phone.center { width: 240px; margin: 0; }
+  }
+
   /* Section headings */
   h2 {
     font-size: 1.7rem;
@@ -201,6 +244,18 @@
       </span>
     </a>
   </div>
+
+  <div class="hero-shots">
+    <div class="phone side left">
+      <img src="assets/screens/box-breathing.jpg" alt="Box Breathing warmup screen" loading="lazy">
+    </div>
+    <div class="phone center">
+      <img src="assets/screens/home.jpg" alt="Breath Hold Trainer home screen" loading="lazy">
+    </div>
+    <div class="phone side right">
+      <img src="assets/screens/deck-of-the-deep.jpg" alt="Deck of the Deep workout screen" loading="lazy">
+    </div>
+  </div>
 </header>
 
 <section id="features">
@@ -262,6 +317,31 @@
         <p>A playful underwater mini-game to make practicing your breath
           hold a little more fun.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <h2>See it in action</h2>
+    <p class="section-sub">A look inside the app.</p>
+    <div class="gallery">
+      <figure>
+        <div class="phone"><img src="assets/screens/custom-table.jpg" alt="Custom Table builder" loading="lazy"></div>
+        <figcaption>Custom Tables</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="assets/screens/land-wod.jpg" alt="Land WOD Generator" loading="lazy"></div>
+        <figcaption>Land WOD Generator</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="assets/screens/pool-wod.jpg" alt="Pool WOD Generator" loading="lazy"></div>
+        <figcaption>Pool WOD Generator</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="assets/screens/training-log.jpg" alt="Training Log" loading="lazy"></div>
+        <figcaption>Training Log &amp; Progress</figcaption>
+      </figure>
     </div>
   </div>
 </section>
