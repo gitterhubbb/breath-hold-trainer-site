@@ -134,6 +134,85 @@
     .hero-shots .phone.center { width: 240px; margin: 0; }
   }
 
+  /* Update history */
+  .updates-panel {
+    max-height: 560px;
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    background: var(--card);
+    padding: 6px 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(122,92,255,0.5) transparent;
+  }
+  .updates-panel::-webkit-scrollbar { width: 8px; }
+  .updates-panel::-webkit-scrollbar-track { background: transparent; }
+  .updates-panel::-webkit-scrollbar-thumb {
+    background: rgba(122,92,255,0.45);
+    border-radius: 8px;
+  }
+  .updates-panel::-webkit-scrollbar-thumb:hover { background: rgba(122,92,255,0.7); }
+
+  .update-row {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 20px;
+    padding: 20px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .update-row:last-child { border-bottom: none; }
+  .update-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .update-version {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: #08111a;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    white-space: nowrap;
+  }
+  .update-version.latest {
+    background: linear-gradient(90deg, var(--gold1), var(--gold2));
+  }
+  .update-date { font-size: 0.78rem; color: var(--text-dim); }
+  .update-body h4 {
+    margin: 0 0 6px;
+    font-size: 0.98rem;
+    color: var(--text);
+  }
+  .update-body p, .update-body ul {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .update-body ul { padding-left: 18px; }
+  .update-body li { margin-bottom: 3px; }
+  .update-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #08111a;
+    background: var(--mint);
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 560px) {
+    .update-row { grid-template-columns: 1fr; gap: 8px; }
+    .update-meta { flex-direction: row; align-items: center; }
+    .updates-panel { max-height: 480px; }
+  }
+
   /* Section headings */
   h2 {
     font-size: 1.7rem;
@@ -342,6 +421,209 @@
         <div class="phone"><img src="assets/screens/deck-of-the-deep.jpg" alt="Deck of the Deep workout" loading="lazy"></div>
         <figcaption>Deck of the Deep</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section id="updates">
+  <div class="wrap">
+    <h2>Update history</h2>
+    <p class="section-sub">Every major release, straight from the changelog.</p>
+    <div class="updates-panel">
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version latest">8.3.0</span>
+          <span class="update-date">Jul 22, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Custom Tables <span class="update-badge">NEW</span></h4>
+          <p>Build and save your own custom breath-hold training tables — pick a template, drag to adjust hold and recovery times, and run it like any other table. CO₂, O₂, and Custom Tables now live together under one Training Tables menu. Personal records are now called out right in your training log, charts, and after every session.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">8.2.0</span>
+          <span class="update-date">Jul 22, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Smarter workout generators</h4>
+          <p>Land and Pool WOD difficulty now actually changes your workout — harder settings mean more breath-hold work and tougher movements, easier settings dial it back. Land WODs also hit your target time more accurately, and both generators give more variety between rounds. Manual max entries can be backdated and show up properly in your log and progress charts.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">8.1.0</span>
+          <span class="update-date">Jul 20, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Visual refresh &amp; safety improvements</h4>
+          <ul>
+            <li>Refreshed, modern design across every screen</li>
+            <li>Shallow-water blackout warning now requires explicit acceptance before you start</li>
+            <li>Guided audio coaching added to more warmup and training screens</li>
+            <li>Fixed haptic feedback firing when vibration was turned off</li>
+            <li>Manually logged breath holds can now be backdated to a past day</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">8.0.0</span>
+          <span class="update-date">Jul 17, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Redesign &amp; audio overhaul</h4>
+          <p>Every remaining screen redesigned with the modern glass-card look, a full audio system overhaul, new Help/Info popovers throughout, and countdown &amp; copy polish across the Pool WOD generator.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.6.0</span>
+          <span class="update-date">Jul 15, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>New warmup &amp; more Land WOD variety</h4>
+          <p>Added a new Uncertain Breath Hold warmup exercise, a style picker and more randomized variety for Land WODs, and refreshed warmup screen visuals.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.4.0</span>
+          <span class="update-date">Jul 12, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Countdown cues &amp; sandbag variety</h4>
+          <p>Added a pre-session countdown with 3-2-1 cues to warmups, sandbag movements and more variety to both WOD generators, a first-time premium upgrade prompt, and fixed the progress chart defaulting to the wrong date.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.3.0</span>
+          <span class="update-date">Jul 6, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Selectable rounds for CO₂/O₂ tables</h4>
+          <p>CO₂ and O₂ tables now let you pick your number of rounds, plus a more secure premium purchase flow and a refreshed toggle-picker style.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.2.0</span>
+          <span class="update-date">Jul 4, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Training Log refresh</h4>
+          <p>A refreshed Training Log screen.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.1.0</span>
+          <span class="update-date">Jul 4, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>New app icon &amp; bug fixes</h4>
+          <p>New app icon, more variety in guided audio cues, and a round of bug fixes across the Pool WOD generator, timer screens, and popups.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">7.0.0</span>
+          <span class="update-date">Jun 15, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Rebrand</h4>
+          <p>Rebranded from Deep End Fitness to H2O Fitness, with updated dependencies under the hood.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.6.0</span>
+          <span class="update-date">Apr 13, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Under-the-hood updates</h4>
+          <p>Unity engine support upgraded and dependencies refreshed.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.4.0</span>
+          <span class="update-date">Mar 29, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Bigger WOD generators</h4>
+          <p>Big upgrades to both WOD generators — difficulty levels, exercise locking, a duration picker, and save-to-log for Pool WODs — plus fixes for Android 15 display warnings and a tutorial-repeat bug.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.3.0</span>
+          <span class="update-date">Mar 26, 2026</span>
+        </div>
+        <div class="update-body">
+          <h4>Onboarding tutorial</h4>
+          <p>Added a guided tutorial to help new users get started.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.2.0</span>
+          <span class="update-date">Nov 12, 2025</span>
+        </div>
+        <div class="update-body">
+          <h4>CO₂ table fix</h4>
+          <p>Fixed a bug in the CO₂ table.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.1.2</span>
+          <span class="update-date">Jun 30, 2025</span>
+        </div>
+        <div class="update-body">
+          <h4>Android launch</h4>
+          <p>Added full Android support alongside iOS, with the H2O breath-hold mini-game integrated on both platforms.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.1.0</span>
+          <span class="update-date">Jun 26, 2025</span>
+        </div>
+        <div class="update-body">
+          <h4>H2O mini-game debut</h4>
+          <p>Introduced the H2O breath-hold mini-game on iOS, and refreshed Pool WODs with new movements and shorter static holds.</p>
+        </div>
+      </div>
+
+      <div class="update-row">
+        <div class="update-meta">
+          <span class="update-version">6.0.3</span>
+          <span class="update-date">Jun 23, 2025</span>
+        </div>
+        <div class="update-body">
+          <h4>Initial release</h4>
+          <p>The first release of Breath Hold Trainer.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
